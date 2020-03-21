@@ -1,6 +1,6 @@
-DOCUMENTACION
+PASO A PASO PARA DESPLEGAR LA ARQUITECTURA
 ============
-
+Las dependencias tienen que ser instaladas previo a la ejecución de cualquier comando descrito en el presente documento.
 
 1- GENERAR LOS MATERIALES CRIPTOGRAFICOS
 ========================================

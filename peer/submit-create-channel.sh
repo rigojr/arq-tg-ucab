@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 # This script simply submits the channel create transaction transaction
 function usage {
     echo    "Usage:     ./submit-create-channel   ORG_NAME  [IDENTITY default=admin]  [ORDERER_ADDRESS default=localhost:7050]"
@@ -9,7 +10,7 @@ function usage {
 if [ -z $1 ]
 then
     usage
-    echo 'Please provide ORG_NAME!!!'
+    echo ' SUMINISTRE ORG_NAME '
     exit 1
 else 
     ORG_NAME=$1
@@ -27,7 +28,7 @@ fi
 if [ -z $3 ]
 then
     ORDERER_ADDRESS="localhost:7050"
-    echo "====>Using default orderer localhost:7050"
+    echo " ================ EMPLEANDO EL ORDENADOR POR DEFECTO localhost:7050 ================"
 else 
     ORDERER_ADDRESS=$3
 fi
@@ -42,7 +43,7 @@ source set-identity.sh
 # Submit the channel create transation
 peer channel create -o $ORDERER_ADDRESS -c ucabchannel -f $CHANNEL_TX_FILE
 
-echo "====> Done. Check Orderer logs for any errors !!!"
+echo " ================ LISTO, REVISE LOS LOGS DEL ORDENADOR POR POSIBLES ERRORES ================ "
 
 
 

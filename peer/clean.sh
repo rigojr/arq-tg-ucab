@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 sudo killall peer 2> /dev/null
 
 # Remove all generated files
@@ -5,7 +6,7 @@ rm *.block 2> /dev/null
 rm *.json 2> /dev/null
 rm *.pb 2> /dev/null
 
-# Remove the subfolders under acme | peer
+# Remove the subfolders
 function cleanOrgFolders {
     rm -rf $ORG_NAME/peer* 2> /dev/null
     rm $ORG_NAME/*.tx 2> /dev/null
@@ -20,11 +21,11 @@ ORG_NAME=ucab
 cleanOrgFolders
 
 
-# Clean up the budget ce
+# Clean up the ce folder
 ORG_NAME=ce
 cleanOrgFolders
 
-# Clean up the budget sce
+# Clean up the  sce folder
 ORG_NAME=sce
 cleanOrgFolders
 
@@ -34,4 +35,4 @@ rm  config/* 2> /dev/null
 rm *.block 2> /dev/null
 rm *.tx 2> /dev/null
 
-echo "===== Done."
+echo " ================ LISTO ================ "

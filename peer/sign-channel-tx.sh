@@ -16,6 +16,7 @@ else
     ORG_NAME=$1
 fi
 
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 # Set the environment variable $1 = ORG_NAME Identity=admin
 source set-identity.sh 
 
@@ -26,8 +27,6 @@ CHANNEL_TX_FILE=$PWD/../orderer/ucab-channel.tx
 # Execute command to sign the tx file in place
 peer channel signconfigtx -f $CHANNEL_TX_FILE
 
-echo "====> Done. Signed file with identity $ORG_NAME/admin"
-echo "====> Check size & timestamp of file $CHANNEL_TX_FILE"
+echo " ================ LISTO. FIRMADO POR $ORG_NAME/admin ================"
 
 # PS: The join cannot be execute without a channel created
-# peer channel join -o localhost:7050 -b $PWD/../../orderer/multi-org-ca/airline-channel.tx

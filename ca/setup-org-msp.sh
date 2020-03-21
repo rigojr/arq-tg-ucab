@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 # This utility scripts adds the msp under the organization
 
 function usage {
@@ -7,7 +8,7 @@ function usage {
 
 if [ -z $1 ]
 then
-    echo "Please provide ORG-Name!!!"
+    echo "SUMINISTRE ORG-Name"
     usage
     exit 0
 else 
@@ -34,7 +35,7 @@ cp $ROOT_CA_CERTIFICATE $DESTINATION_CLIENT_HOME/msp/cacerts
 # Copy the admin certs - ORG admin is the admin for the specified Org
 cp $FABRIC_CA_CLIENT_HOME/msp/signcerts/* $DESTINATION_CLIENT_HOME/msp/admincerts         
 
-echo "Created MSP Under: $DESTINATION_CLIENT_HOME"
+echo "CREADO MSP EN: $DESTINATION_CLIENT_HOME"
 
 
 

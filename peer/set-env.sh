@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 #!/bin/bash
 
 # Sets the env & identity to specified   Org   User
@@ -21,17 +22,17 @@ echo "Current PEER_NAME: $CORE_PEER_ID"
 if [ -z $1 ];
 then
     usage
-    echo "Please provide the ORG Name!!!"
+    echo " SUMINISTRE ORG Name "
     exit 0
 else
     ORG_NAME=$1
-    echo "Switching PEER_NAME for Org = $ORG_NAME"
+    echo " CAMBIANDO PEER_NAME POR Org = $ORG_NAME"
 fi
 
 if [ -z $2 ];
 then
     usage
-    echo  "Please specify PEER_NAME or Peer name!!!"
+    echo  " SUMINISTRE PEER_NAME / NOMBRE DEL PEER"
     exit 0
 else
     PEER_NAME=$2
@@ -40,7 +41,7 @@ fi
 PORT_NUMBER_BASE=7050
 if [ -z $3 ]
 then
-    echo "Setting PORT_NUMBER_BASE=7050"   
+    echo " CONFIGURANDO PORT_NUMBER_BASE=7050 "   
 else
     PORT_NUMBER_BASE=$3
 fi

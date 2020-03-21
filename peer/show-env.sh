@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 # Dumps the Peer config
 
 env | grep CORE_PEER

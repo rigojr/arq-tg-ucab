@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 # Sets the FABRIC_CA_CLIENT_HOME based on (a) org (b) enrollment ID
 
 function usage {
@@ -9,14 +10,14 @@ function usage {
 if [ -z $1 ];
 then
     usage
-    echo   "To CHANGE please provide ORG-Name & enrollment ID"
+    echo   "PARA CAMBIAR, SUMINISTRE ORG-Name & enrollment ID"
     exit 1
 fi
 
 if [ -z $2 ];
 then
     usage
-    echo   "Please provide enrollment ID"
+    echo   "SUMINISTRE enrollment ID"
     exit 1
 fi
 

@@ -1,42 +1,46 @@
-# Registers the 3 admins
-# acme-admin, budget-admin, orderer-admin
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
+# Registro de 4 admins
+# ucab-admin, sce-admin, ucabor-admin y ce-admin
 
-# Registers the admins
+# Función para registrar los admins
 function registerAdmins {
-    # 1. Set the CA Server Admin as FABRIC_CA_CLIENT_HOME
+    # 1. Configura el FABRIC_CA_CLIENT_HOME con el Admin del CA Server
     source setclient.sh   caserver   admin
+    echo " ================ INICIANDO REGISTRO DE LOS ADMINISTRADORES ================"
 
-    # 2. Register ucab-admin
+    # 2. Registra ucab-admin
     echo "REGISTRANDO: ucab-admin"
     ATTRIBUTES='"hf.Registrar.Roles=peer,user,client","hf.AffiliationMgr=true","hf.Revoker=true"'
     fabric-ca-client register --id.type client --id.name ucab-admin --id.secret pw --id.affiliation ucab --id.attrs $ATTRIBUTES
 
-    # 3. Register sce-admin
+    # 3. Registra sce-admin
     echo "REGISTRANDO: sce-admin"
     ATTRIBUTES='"hf.Registrar.Roles=peer,user,client","hf.AffiliationMgr=true","hf.Revoker=true"'
     fabric-ca-client register --id.type client --id.name sce-admin --id.secret pw --id.affiliation sce --id.attrs $ATTRIBUTES
 
-    # 4. Register ucabor-admin
+    # 4. Registra ucabor-admin
     echo "REGISTRANDO: ucabor-admin"
     ATTRIBUTES='"hf.Registrar.Roles=orderer"'
     fabric-ca-client register --id.type client --id.name ucabor-admin --id.secret pw --id.affiliation ucabor --id.attrs $ATTRIBUTES
 
-    # 5. Register ce-admin
+    # 5. Registra ce-admin
     echo "REGISTRANDO: ce-admin"
     ATTRIBUTES='"hf.Registrar.Roles=peer,user,client","hf.AffiliationMgr=true","hf.Revoker=true"'
     fabric-ca-client register --id.type client --id.name ce-admin --id.secret pw --id.affiliation ce --id.attrs $ATTRIBUTES
 }
 
-# Setup MSP
+# Configurando MSP
 function setupMSP {
     mkdir -p $FABRIC_CA_CLIENT_HOME/msp/admincerts
 
-    echo "====> $FABRIC_CA_CLIENT_HOME/msp/admincerts"
+    echo "$FABRIC_CA_CLIENT_HOME/msp/admincerts"
     cp $FABRIC_CA_CLIENT_HOME/../../caserver/admin/msp/signcerts/*  $FABRIC_CA_CLIENT_HOME/msp/admincerts
 }
 
-# Enroll admin
+# Enrolar admins
 function enrollAdmins {
+    echo " ================ INICIANDO ENROLAMIENTO DE LOS ADMINISTRADORES ================"
+
     # 1. ucab-admin
     echo "ENROLANDO: ucab-admin"
 
@@ -74,8 +78,7 @@ function enrollAdmins {
     setupMSP
 }
 
-echo "========= Registering ==============="
+echo "========= REGISTRANDO ==============="
 registerAdmins
-echo "========= Enrolling ==============="
+echo "========= ENROLANDO ==============="
 enrollAdmins
-echo "==================================="

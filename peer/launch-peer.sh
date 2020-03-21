@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 function usage {
     echo ". launch-peer.sh   ORG_NAME   PEER_NAME  [PORT_NUMBER_BASE default=7050] "
     echo "                   Sets the environment variables for the peer & then launches it"
@@ -7,7 +8,7 @@ function usage {
 if [ -z $1 ];
 then
     usage
-    echo "Please provide the ORG Name!!!"
+    echo " SUMINISTRE ORG Name"
     exit 0
 else
     ORG_NAME=$1
@@ -17,7 +18,7 @@ fi
 if [ -z $2 ];
 then
     usage
-    echo  "Please specify PEER_NAME!!!"
+    echo  "SUMINISTRE PEER_NAME"
     exit 0
 else 
     PEER_NAME=$2
@@ -38,5 +39,5 @@ mkdir -p $PEER_LOGS
 # Start the peer
 sudo -E peer node start 2> $PEER_LOGS/peer.log &
 
-echo "====>PLEASE Check Peer Log under  $PWD/$ORG_NAME/$PEER_NAME"
-echo "====>Make sure there are no errors!!!"
+echo " ================ REVISE LOGS EN $PWD/$ORG_NAME/$PEER_NAME ================ "
+echo " ================ PARA ASEGURARSE QUE NO HAYAN ERRORES ================ "

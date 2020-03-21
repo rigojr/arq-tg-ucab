@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 # Sets the identity used for executing the peer commands
 function usage {
     echo 'USAGE:  . set-identity.sh  ORG_NAME [IDENTITY default=admin]'
@@ -28,7 +29,7 @@ export FABRIC_CFG_PATH=`pwd`/$ORG_NAME
 MSP_ID="$(tr '[:lower:]' '[:upper:]' <<< ${ORG_NAME:0:1})${ORG_NAME:1}"
 export CORE_PEER_LOCALMSPID=$MSP_ID"MSP"
 
-echo "Switched Identity to: $ORG_NAME   $IDENTITY"
+echo "CAMBIANDO IDENTIDAD A: $ORG_NAME   $IDENTITY"
 
 # Simply checks if this script was executed directly on the terminal/shell
 # it has the '.'

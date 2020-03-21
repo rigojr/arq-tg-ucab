@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 # Utility for
 # 1. Initializing the CA server     a) copy the server YAML to ./server b) server.sh  start
 #    Validate by checking the logs under ./server/server.log
@@ -80,9 +81,9 @@ function enable-removal {
         # DB file not there - so just kill & start 
         killall fabric-ca-server 2> /dev/null
         fabric-ca-server start --cfg.identities.allowremove 2> $FABRIC_CA_SERVER_HOME/server.log &
-        echo "Started CA Server with identity removal ENABLED."
+        echo "identity removal HABILITADO."
     else
-	    echo "Error: Please start server before using enable-remove!!!"
+	    echo "Error: INICIE EL SERVIDOR ANTES DE HABILITAR EL indentity removal"
         exit 0
     fi
 }
@@ -116,7 +117,7 @@ case $1 in
         sleep $SLEEP_TIME
         enroll
         ;;
-    *) echo "Invalid argument !!!"
+    *) echo "ARGUMENTO NO VALIDO"
        usage
        ;;
 esac

@@ -1,3 +1,4 @@
+# Fuente Fabric Network design & setup (https://www.udemy.com/course/hyperledger-fabric-network-design-setup).
 # Creates/Enrolls the Peer's identity + Sets up MSP for peer
 # Script needs to be executed for the peers setup
 # PS: Since Register (step 1) can happen only once - ignore register error if you run script multiple times
@@ -11,7 +12,7 @@ function usage {
 if [ -z $1 ];
 then
     usage
-    echo "Please provide the ORG Name!!!"
+    echo " SUMINISTRE ORG Name "
     exit 0
 else
     ORG_NAME=$1
@@ -20,7 +21,7 @@ fi
 if [ -z $2 ];
 then
     usage
-    echo  "Please specify PEER_NAME!!!"
+    echo  " SUMINISTRE PEER_NAME "
     exit 0
 else
     PEER_NAME=$2
@@ -31,9 +32,9 @@ function    checkCopyYAML {
     SETUP_CONFIG_CLIENT_YAML="../ca/setup/$ORG_NAME/$PEER_NAME/fabric-ca-client-config.yaml"
     if [ -f "$FABRIC_CA_CLIENT_HOME/fabric-ca-client-config.yaml" ]
     then 
-        echo "Using the existing Client Yaml for orderer"
+        echo "EMPLEANDO ARCHIVO YAML EN LA CARPETA"
     else
-        echo "Copied the Client Yaml from $SETUP_CONFIG_CLIENT_YAML "
+        echo "COPIANDO EL ARCHIVO YAML EN$SETUP_CONFIG_CLIENT_YAML "
         mkdir -p $FABRIC_CA_CLIENT_HOME
         cp  "$SETUP_CONFIG_CLIENT_YAML" "$FABRIC_CA_CLIENT_HOME/fabric-ca-client-config.yaml"
     fi
@@ -55,7 +56,7 @@ ADMIN_CLIENT_HOME=$FABRIC_CA_CLIENT_HOME
 # Step-1  Register the identity
 echo "FABRIC_CA_CLIENT_HOME=$FABRIC_CA_CLIENT_HOME"
 fabric-ca-client register --id.type peer --id.name $PEER_NAME --id.secret pw --id.affiliation $ORG_NAME 
-echo "======Completed: Step 1 : Registered peer (can be done only once)===="
+echo " ================ COMPLETADO PASO 1: PEER REGISTRADO (can be done only once) ================ "
 
 # Set the FABRIC_CA_CLIENT_HOME for peer
 IDENTITY=$PEER_NAME
@@ -63,18 +64,19 @@ setFabricCaClientHome
 
 # Step-2 Copies the YAML file for CSR setup
 checkCopyYAML
+echo " ================ COMPLETADO PASO 2: COPIADOS LOS YAML PARA LA CONFIGURACION DEL CSR ================ "
 
 # Step-3 Peer identity is enrolled
 # Admin will  enroll the peer identity. The MSP will be written in the 
 # FABRIC_CA_CLIENT_HOME
 fabric-ca-client enroll -u http://$PEER_NAME:pw@localhost:7054
-echo "======Completed: Step 3 : Enrolled $PEER_NAME ========"
+echo " ================ COMPLETADO PASO 3: ENROLADO EL PEER $PEER_NAME ================ "
 
 # Step-4 Copy the admincerts to the appropriate folder
 mkdir -p $FABRIC_CA_CLIENT_HOME/msp/admincerts
 cp $ADMIN_CLIENT_HOME/msp/signcerts/*    $FABRIC_CA_CLIENT_HOME/msp/admincerts
 
-echo "======Completed: Step 4 : MSP setup for the peer========"
+echo " ================ COMPLETADDO PASO 4: MSP CONFIGURADO PARA EL PEER ================ "
 
 
 
