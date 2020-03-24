@@ -35,4 +35,10 @@ rm  config/* 2> /dev/null
 rm *.block 2> /dev/null
 rm *.tx 2> /dev/null
 
+docker container kill $(docker ps -q)
+
+docker container rm $COUCHDB_ID_UCAB
+docker container rm $COUCHDB_ID_CE
+docker container rm $COUCHDB_ID_SCE
+
 echo " ================ LISTO ================ "

@@ -15,6 +15,9 @@ Las dependencias tienen que ser instaladas previo a la ejecución de cualquier c
 - CREO LA ESTRUCTURA MSP Y COPIO LOS MATERIALES CRIPTOGRAFICOS
     * ./setup-org-msp-all.sh
 
+- EJECUTE TODOS LOS COMANDOS ANTERIORES CON
+    * ./all.sh
+
 ## Otros comandos útiles
 
 - LEO LA COLA DEL SERVER.LOG
@@ -36,6 +39,8 @@ Las dependencias tienen que ser instaladas previo a la ejecución de cualquier c
     * ./launch.sh 
 - GENERAR EL CHANNEL TX
     * ./generate-channel-tx.sh
+- EJECUTE TODOS LOS COMANDOS ANTERIORES CON
+    * ./all.sh
 
 ## Otros comandos útiles
 - LIMPIO TODO MI DIRECTORIO
@@ -99,6 +104,11 @@ Las dependencias tienen que ser instaladas previo a la ejecución de cualquier c
     * ps -eal | grep peer
 
 # Otros comandos 
+
+## DOCKER
+
+- MATO UN CONTENEDOR POR ID
+    * docker container rm ID
 
 ## WIRESHARK
 
