@@ -86,7 +86,7 @@ Las dependencias tienen que ser instaladas previo a la ejecución de cualquier c
     * ./launch-peer.sh sce peer2 8050
 - INGRESAR AL CANAL
     * ./join-regular-peer-to-ucabchannel.sh sce peer2 8050
-- CONFIGURAR VARIALBES DE AMBIENTE PARA EL PEER 3
+- CONFIGURAR VARIALBES DE AMBIENTE PARA EL PEER 2
     * . set-env.sh sce peer2 8050
 - LEER EL OUTPUT DEL BINARIO DEL PEER
     * tail -f sce/peer2/peer.log
@@ -103,4 +103,4 @@ Las dependencias tienen que ser instaladas previo a la ejecución de cualquier c
 ## WIRESHARK
 
 - MUESTRA TODO LOS PAQUETES DE LOCALHOST Y EL PORTE 7051
-    * sudo tshark -i any -V host 127.0.0.1 and port 7051
+    * sudo tshark -i any -w nlog.pcap -V host 127.0.0.1 and port 7051
