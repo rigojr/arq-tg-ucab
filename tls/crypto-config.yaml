@@ -1,0 +1,45 @@
+
+##### Orderer
+OrdererOrgs:
+  - Name: Ucabor
+    Domain: ucabor.ucab.edu.ve
+    Specs:
+      - Hostname: vagrant
+        SANS:
+          - "localhost"
+          - "127.0.0.1"
+        
+#### Peers 
+PeerOrgs:
+  - Name: Ucab
+    Domain: ucab.ucab.edu.ve
+    Specs:
+      - Hostname: vagrant
+        CommonName: vagrant
+        SANS:
+          - "localhost"
+          - "127.0.0.1"
+    Users:
+      Count: 1
+
+  - Name: Sce
+    Domain: sce.ucab.edu.ve
+    Specs:
+      - Hostname: vagrant
+        CommonName: vagrant
+    SANS:
+    - "localhost"
+    - "127.0.0.1"
+    Users:
+      Count: 1
+
+  - Name: Ce
+    Domain: ce.ucab.edu.ve
+    Specs:
+      - Hostname: vagrant
+        CommonName: vagrant
+        SANS:
+          - "localhost"
+          - "127.0.0.1"
+    Users:
+      Count: 1

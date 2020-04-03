@@ -14,5 +14,7 @@ sudo rm -rf /var/ledgers/ucabor/ledger 2> /dev/null
 
 rm -rf ./log
 
+$HOME/kafka/bin/kafka-topics.sh --zookeeper $ZK_HOSTS --delete --topic ordererchannel
+$HOME/kafka/bin/kafka-topics.sh --zookeeper $ZK_HOSTS --delete --topic ucabchannel
 
 echo " ================ LISTO ================ "

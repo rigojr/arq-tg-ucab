@@ -54,7 +54,7 @@ General:
 
     # TLS: TLS settings for the GRPC server.
     TLS:
-        Enabled: false
+        Enabled: true
         PrivateKey: ../tls/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/orderers/vagrant.ucabor.ucab.edu.ve/tls/server.key
         Certificate: ../tls/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/orderers/vagrant.ucabor.ucab.edu.ve/tls/server.crt
         RootCAs:
