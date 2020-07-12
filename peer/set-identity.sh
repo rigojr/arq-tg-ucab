@@ -21,9 +21,21 @@ else
 fi
 
 # Create the path to the crypto config folder
-CRYPTO_CONFIG_ROOT_FOLDER=`pwd`/../ca/client
+CRYPTO_CONFIG_ROOT_FOLDER=`pwd`/../crypto/crypto-config/
 
-export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/$ORG_NAME/$IDENTITY/msp
+PEER_NAME='devpeer'
+
+case $IDENTITY in 
+    "admin")
+        export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/peerOrganizations/$ORG_NAME.ucab.edu.ve/users/Admin@$ORG_NAME.ucab.edu.ve/msp
+        ;;
+    *)
+        export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/peerOrganizations/$ORG_NAME.ucab.edu.ve/peers/$PEER_NAME/msp
+        ;;
+esac
+
+#export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/$ORG_NAME/$IDENTITY/msp
+
 export FABRIC_CFG_PATH=`pwd`/$ORG_NAME
 # Setup the MSP ID
 MSP_ID="$(tr '[:lower:]' '[:upper:]' <<< ${ORG_NAME:0:1})${ORG_NAME:1}"

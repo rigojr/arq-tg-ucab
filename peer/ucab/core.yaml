@@ -273,7 +273,7 @@ peer:
 
     # Path on the file system where peer will find MSP local configurations
     # mspConfigPath: ../../../orderer/multi-org/crypto-config/peerOrganizations/acme.com/users/Admin@acme.com/msp
-    mspConfigPath: ../../ca/client/ucab/admin/msp
+    mspConfigPath: ../../crypto/crypto-config/peerOrganizations/ucab.ucab.edu.ve/users/Admin@ucab.ucab.edu.ve/msp
 
     # Identifier of the local MSP
     # ----!!!!IMPORTANT!!!-!!!IMPORTANT!!!-!!!IMPORTANT!!!!----

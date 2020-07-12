@@ -25,21 +25,21 @@ ORG_NAME="ucab"
 IDENTITY="admin"
 PEER_NAME="peer1"
 PEER_BASE_PORT=7050
-source  set-env.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
+source  set-env-validate.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
 peer chaincode install  -n $CC_NAME -p $CC_PATH -v $CC_VERSION
 
 ORG_NAME="sce"
 IDENTITY="admin"
 PEER_NAME="peer2"
 PEER_BASE_PORT=8050
-source  set-env.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
+source  set-env-validate.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
 peer chaincode install  -n $CC_NAME -p $CC_PATH -v $CC_VERSION
 
 ORG_NAME="ce"
 IDENTITY="admin"
 PEER_NAME="peer3"
 PEER_BASE_PORT=9050
-source  set-env.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
+source  set-env-validate.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
 peer chaincode install  -n $CC_NAME -p $CC_PATH -v $CC_VERSION
 
 # 2. Instantiate the chaincode on acme peer1
@@ -48,7 +48,7 @@ ORG_NAME="ucab"
 IDENTITY="admin"
 PEER_NAME="peer1"
 PEER_BASE_PORT=7050
-source  set-env.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
+source  set-env-validate.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
 peer chaincode instantiate -C $CC_CHANNEL_ID -n $CC_NAME  -v $CC_VERSION -c $CC_CONSTRUCTOR
 
 # 3. Executes query on budget peer1
@@ -57,7 +57,7 @@ ORG_NAME="sce"
 IDENTITY="admin"
 PEER_NAME="peer2"
 PEER_BASE_PORT=8050
-source  set-env.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
+source  set-env-validate.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
 peer chaincode query -C $CC_CHANNEL_ID -n $CC_NAME  -c '{"Args":["query","a"]}'
 
 # 4. Executes invoke on acme peer1
@@ -66,7 +66,7 @@ ORG_NAME="ucab"
 IDENTITY="admin"
 PEER_NAME="peer1"
 PEER_BASE_PORT=7050
-source  set-env.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
+source  set-env-validate.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
 peer chaincode invoke -C $CC_CHANNEL_ID -n gocc  -c '{"Args":["invoke","a","b","10"]}'
 
 # Give some time for transaction to propagate the network
@@ -78,19 +78,19 @@ ORG_NAME="sce"
 IDENTITY="admin"
 PEER_NAME="peer2"
 PEER_BASE_PORT=8050
-source  set-env.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
+source  set-env-validate.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
 peer chaincode query -C $CC_CHANNEL_ID -n $CC_NAME  -c '{"Args":["query","a"]}'
 
 ORG_NAME="ucab"
 IDENTITY="admin"
 PEER_NAME="peer1"
 PEER_BASE_PORT=7050
-source  set-env.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
+source  set-env-validate.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
 peer chaincode query -C $CC_CHANNEL_ID -n $CC_NAME  -c '{"Args":["query","a"]}'
 
 ORG_NAME="ce"
 IDENTITY="admin"
 PEER_NAME="peer3"
 PEER_BASE_PORT=9050
-source  set-env.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
+source  set-env-validate.sh  $ORG_NAME $PEER_NAME $PEER_BASE_PORT $IDENTITY
 peer chaincode query -C $CC_CHANNEL_ID -n $CC_NAME  -c '{"Args":["query","a"]}'

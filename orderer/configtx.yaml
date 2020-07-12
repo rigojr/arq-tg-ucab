@@ -15,7 +15,7 @@ Organizations:
  - &Ucabor
    Name: Ucabor
    ID: UcaborMSP
-   MSPDir: ../ca/client/ucabor/msp
+   MSPDir: ../crypto/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/msp
    Policies: &OrdererPolicies
      Readers:
          Type: Signature
@@ -30,7 +30,7 @@ Organizations:
  - &Ucab
    Name: Ucab
    ID: UcabMSP
-   MSPDir: ../ca/client/ucab/msp
+   MSPDir: ../crypto/crypto-config/peerOrganizations/ucab.ucab.edu.ve/msp
    Policies: &UcabPolicies
      Readers:
          Type: Signature
@@ -48,7 +48,7 @@ Organizations:
  - &Sce
    Name: Sce
    ID: SceMSP
-   MSPDir: ../ca/client/sce/msp
+   MSPDir: ../crypto/crypto-config/peerOrganizations/sce.ucab.edu.ve/msp
    Policies: &ScePolicies
      Readers:
          Type: Signature
@@ -66,7 +66,7 @@ Organizations:
  - &Ce
    Name: Ce
    ID: CeMSP
-   MSPDir: ../ca/client/ce/msp
+   MSPDir: ../crypto/crypto-config/peerOrganizations/ce.ucab.edu.ve/msp
    Policies: &CePolicies
      Readers:
          Type: Signature

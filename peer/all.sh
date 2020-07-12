@@ -18,9 +18,6 @@ sleep 1s
 source submit-create-channel.sh ucab admin
 
 
-echo " ****** register-enroll-peer.sh ucab peer1 ****** "
-sleep 1s
-source register-enroll-peer.sh ucab peer1
 echo " ****** launch-peer.sh ucab peer1 ****** "
 sleep 1s
 source launch-peer.sh ucab peer1
@@ -31,9 +28,6 @@ echo " ****** join-ucab-channel.sh ucab peer1 ****** "
 sleep 1s
 source join-ucab-channel.sh ucab peer1
 
-echo " ****** register-enroll-peer.sh ce peer3 ****** "
-sleep 7s
-source register-enroll-peer.sh ce peer3
 echo " ****** launch-peer.sh ce peer3 9050 ****** "
 sleep 7s
 source launch-peer.sh ce peer3 9050
@@ -41,9 +35,6 @@ echo " ****** join-regular-peer-to-ucabchannel.sh ce peer3 9050 ****** "
 sleep 7s
 source join-regular-peer-to-ucabchannel.sh ce peer3 9050
 
-echo " ****** register-enroll-peer.sh sce peer2 ****** "
-sleep 10s
-source register-enroll-peer.sh sce peer2
 echo " ****** launch-peer.sh sce peer2 8050 ****** "
 sleep 5s
 source launch-peer.sh sce peer2 8050

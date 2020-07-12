@@ -114,3 +114,9 @@ Las dependencias tienen que ser instaladas previo a la ejecución de cualquier c
 
 - MUESTRA TODO LOS PAQUETES DE LOCALHOST Y EL PORTE 7051
     * sudo tshark -i any -w nlog.pcap -V host 127.0.0.1 and port 7051
+
+## CONECTAR CON AWS
+
+- COMANDOS
+    * ssh -i vote-ledger-ssh.pem ubuntu@ec2-18-209-179-50.compute-1.amazonaws.com
+    * scp -i vote-ledger-ssh.pem/path/SampleFile.txt ubuntu@ec2-18-209-179-50.compute-1.amazonaws.com:~

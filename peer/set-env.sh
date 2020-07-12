@@ -59,8 +59,8 @@ else
 fi
 
 # Create the path to the crypto config folder
-CRYPTO_CONFIG_ROOT_FOLDER="$PWD/../ca/client"
-export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/$ORG_NAME/$IDENTITY/msp
+CRYPTO_CONFIG_ROOT_FOLDER="$PWD/../crypto/crypto-config/"
+export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/peerOrganizations/$ORG_NAME.ucab.edu.ve/peers/devpeer/msp
 export FABRIC_CFG_PATH="$PWD/$ORG_NAME"
 
 #export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/$ORG_NAME/$PEER_NAME/msp

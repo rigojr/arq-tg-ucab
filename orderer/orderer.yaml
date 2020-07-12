@@ -32,7 +32,7 @@ General:
     # Directory for the private crypto material needed by the
     # orderer. 
     # LocalMSPDir: ./crypto-config/ordererOrganizations/acme.com/orderers/orderer.acme.com/msp
-    LocalMSPDir: ../ca/client/ucabor/ucabor/msp
+    LocalMSPDir: ../crypto/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/orderers/orderer.ucabor.ucab.edu.ve/msp/
 
     # Identity to register the local MSP material with the MSP
     LocalMSPID: UcaborMSP
@@ -55,10 +55,10 @@ General:
     # TLS: TLS settings for the GRPC server.
     TLS:
         Enabled: false
-        PrivateKey: ../tls/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/orderers/vagrant.ucabor.ucab.edu.ve/tls/server.key
-        Certificate: ../tls/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/orderers/vagrant.ucabor.ucab.edu.ve/tls/server.crt
+        PrivateKey: ../crypto/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/orderers/orderer.ucabor.ucab.edu.ve/tls/server.key
+        Certificate: ../crypto/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/orderers/orderer.ucabor.ucab.edu.ve/tls/server.crt
         RootCAs:
-          - ../tls/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/orderers/vagrant.ucabor.ucab.edu.ve/tls/ca.crt
+          - ../crypto/crypto-config/ordererOrganizations/ucabor.ucab.edu.ve/orderers/orderer.ucabor.ucab.edu.ve/tls/ca.crt
         ClientAuthRequired: false
         ClientRootCAs:
 

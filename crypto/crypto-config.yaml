@@ -1,0 +1,39 @@
+##### Orderer
+OrdererOrgs:
+  - Name: Ucabor
+    Domain: ucabor.ucab.edu.ve
+    #EnableNodeOUs: true
+    Specs:
+      - Hostname: orderer
+      
+#### Peer Ucab
+PeerOrgs:
+  # Peer configuration for ACME
+  - Name: Ucab
+    Domain: ucab.ucab.edu.ve
+    Specs:
+      - Hostname: devpeer
+        CommonName: devpeer
+    Users:
+      Count: 2
+
+  # Peer CE
+  - Name: Ce
+    Domain: ce.ucab.edu.ve
+    Specs:
+      - Hostname: devpeer
+        CommonName: devpeer
+    Users:
+      Count: 2
+
+  # Peer SCE
+  - Name: Sce
+    Domain: sce.ucab.edu.ve
+    Specs:
+      - Hostname: devpeer
+        CommonName: devpeer
+    Users:
+      Count: 2
+
+
+      

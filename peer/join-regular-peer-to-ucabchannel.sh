@@ -53,7 +53,7 @@ sleep 5s
 # 2. Join the channel
 # Only admin is allowed to execute join command
 
-export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/$ORG_NAME/admin/msp
+export CORE_PEER_MSPCONFIGPATH=$CRYPTO_CONFIG_ROOT_FOLDER/peerOrganizations/$ORG_NAME.ucab.edu.ve/users/Admin@$ORG_NAME.ucab.edu.ve/msp
 peer channel join -b ucabchannel_0.block -o $ORDERER_ADDRESS
 
 

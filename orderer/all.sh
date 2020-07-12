@@ -1,8 +1,5 @@
 echo " ****** generate-genesis.sh ****** "
 source generate-genesis.sh
-echo " ****** register-enroll-orderer.sh  ****** "
-sleep 3s
-source register-enroll-orderer.sh 
 echo " ****** launch.sh ****** "
 sleep 3s
 source launch.sh
